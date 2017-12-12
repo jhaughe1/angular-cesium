@@ -1,0 +1,31 @@
+import { MapEventsManagerService } from '../../../../angular-cesium/services/map-events-mananger/map-events-manager';
+import { Observable } from 'rxjs/Observable';
+import { CoordinateConverter } from '../../../../angular-cesium/services/coordinate-converter/coordinate-converter.service';
+import { CameraService } from '../../../../angular-cesium/services/camera/camera.service';
+import { Cartesian3 } from '../../../../angular-cesium/models/cartesian3';
+import { HippodromeEditOptions } from '../../../models/hippodrome-edit-options';
+import { HippodromeManagerService } from './hippodrome-manager.service';
+import { HippodromeEditorObservable } from '../../../models/hippodrome-editor-oboservable';
+import { HippodromeEditUpdate } from '../../../models/hippodrome-edit-update';
+export declare const DEFAULT_HIPPODROME_OPTIONS: HippodromeEditOptions;
+export declare class HippodromeEditorService {
+    private mapEventsManager;
+    private updateSubject;
+    private updatePublisher;
+    private counter;
+    private coordinateConverter;
+    private cameraService;
+    private hippodromeManager;
+    private observablesMap;
+    init(mapEventsManager: MapEventsManagerService, coordinateConverter: CoordinateConverter, cameraService: CameraService, managerService: HippodromeManagerService): void;
+    onUpdate(): Observable<HippodromeEditUpdate>;
+    create(options?: HippodromeEditOptions, eventPriority?: number): HippodromeEditorObservable;
+    edit(positions: Cartesian3[], options?: HippodromeEditOptions, priority?: number): HippodromeEditorObservable;
+    private editHippodrome(id, priority, editSubject, options, editObservable?);
+    private setOptions(options);
+    private createEditorObservable(observableToExtend, id);
+    private generteId();
+    private getPositions(id);
+    private getPoints(id);
+    private getWidth(id);
+}

@@ -1,0 +1,33 @@
+import { AfterContentInit, ChangeDetectorRef, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AcNotification } from '../../models/ac-notification';
+import { Subject } from 'rxjs/Subject';
+import { IDescription } from '../../models/description';
+import { LayerService } from '../../services/layer-service/layer-service.service';
+export declare class AcArrayDescComponent implements OnChanges, OnInit, AfterContentInit, OnDestroy, IDescription {
+    layerService: LayerService;
+    private cd;
+    acFor: string;
+    idGetter: (item: any, index: number) => string;
+    show: boolean;
+    private layer;
+    private basicDescs;
+    private arrayDescs;
+    private entitiesMap;
+    private layerServiceSubscription;
+    private id;
+    private readonly acForRgx;
+    entityName: string;
+    arrayPath: string;
+    arrayObservable$: Subject<AcNotification>;
+    constructor(layerService: LayerService, cd: ChangeDetectorRef);
+    ngOnChanges(changes: SimpleChanges): void;
+    ngOnInit(): void;
+    ngAfterContentInit(): void;
+    ngOnDestroy(): void;
+    setLayerService(layerService: LayerService): void;
+    draw(context: any, id: string, contextEntity: any): void;
+    remove(id: string): void;
+    removeAll(): void;
+    getAcForString(): string;
+    private generateCombinedId(entityId, arrayItem, index);
+}

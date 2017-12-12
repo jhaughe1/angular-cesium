@@ -1,0 +1,37 @@
+import { CesiumService } from '../cesium/cesium.service';
+import { SceneMode } from '../../models/scene-mode.enum';
+export declare class CameraService {
+    static PERFORMANCE_2D_ALTITUDE: number;
+    private viewer;
+    private scene;
+    private camera;
+    private screenSpaceCameraController;
+    private morphListenerCancelFn;
+    private lastRotate;
+    private lastTilt;
+    private lastLook;
+    private isSceneModePerformance2D;
+    constructor();
+    init(cesiumService: CesiumService): void;
+    _listenToSceneModeMorph(callback: Function): void;
+    _revertCameraProperties(): void;
+    getCamera(): any;
+    getScreenSpaceCameraController(): any;
+    getMinimumZoom(): number;
+    setMinimumZoom(amount: number): void;
+    getMaximumZoom(): number;
+    setMaximumZoom(amount: number): void;
+    enableTilt(tilt: boolean): void;
+    enableRotate(rotate: boolean): void;
+    enableLook(lock: boolean): void;
+    enableTranslate(translate: boolean): void;
+    enableZoom(zoom: boolean): void;
+    enableInputs(inputs: boolean): void;
+    setSceneMode(sceneMode: SceneMode, duration?: number): void;
+    cameraFlyTo(options: any): void;
+    flyTo(target: any, options?: any): any;
+    zoomTo(target: any, offset?: any): any;
+    setView(options: any): void;
+    trackEntity(entity?: any): void;
+    untrackEntity(): void;
+}

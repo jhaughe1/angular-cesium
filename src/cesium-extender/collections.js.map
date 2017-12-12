@@ -1,0 +1,1 @@
+{"version":3,"sources":["collections.ts"],"names":[],"mappings":"AAAA,cAAc,oBAAoB,CAAC","file":"collections.js","sourceRoot":"","sourcesContent":["export * from './collections/html';\r\n"]}

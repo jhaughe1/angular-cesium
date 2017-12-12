@@ -1,0 +1,1 @@
+{"version":3,"sources":["edit-mode.enum.ts"],"names":[],"mappings":"AAAA,MAAM,CAAN,IAAY,SAIX;AAJD,WAAY,SAAS;IACnB,6CAAM,CAAA;IACN,yCAAI,CAAA;IACJ,6DAAc,CAAA;AAChB,CAAC,EAJW,SAAS,KAAT,SAAS,QAIpB","file":"edit-mode.enum.js","sourceRoot":"","sourcesContent":["export enum EditModes {\r\n  CREATE,\r\n  EDIT,\r\n  CREATE_OR_EDIT\r\n}\r\n"]}

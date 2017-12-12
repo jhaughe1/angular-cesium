@@ -1,0 +1,30 @@
+import { MapEventsManagerService } from '../../../../angular-cesium/services/map-events-mananger/map-events-manager';
+import { Observable } from 'rxjs/Observable';
+import { PolygonEditUpdate } from '../../../models/polygon-edit-update';
+import { CoordinateConverter } from '../../../../angular-cesium/services/coordinate-converter/coordinate-converter.service';
+import { CameraService } from '../../../../angular-cesium/services/camera/camera.service';
+import { Cartesian3 } from '../../../../angular-cesium/models/cartesian3';
+import { PolygonsManagerService } from './polygons-manager.service';
+import { PolygonEditorObservable } from '../../../models/polygon-editor-observable';
+import { PolygonEditOptions } from '../../../models/polygon-edit-options';
+export declare const DEFAULT_POLYGON_OPTIONS: PolygonEditOptions;
+export declare class PolygonsEditorService {
+    private mapEventsManager;
+    private updateSubject;
+    private updatePublisher;
+    private counter;
+    private coordinateConverter;
+    private cameraService;
+    private polygonsManager;
+    private observablesMap;
+    init(mapEventsManager: MapEventsManagerService, coordinateConverter: CoordinateConverter, cameraService: CameraService, polygonsManager: PolygonsManagerService): void;
+    onUpdate(): Observable<PolygonEditUpdate>;
+    create(options?: PolygonEditOptions, priority?: number): PolygonEditorObservable;
+    edit(positions: Cartesian3[], options?: PolygonEditOptions, priority?: number): PolygonEditorObservable;
+    private editPolygon(id, positions, priority, editSubject, options, editObservable?);
+    private setOptions(options);
+    private createEditorObservable(observableToExtend, id);
+    private generteId();
+    private getPositions(id);
+    private getPoints(id);
+}

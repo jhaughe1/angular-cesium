@@ -1,0 +1,33 @@
+import { MapEventsManagerService } from '../../../../angular-cesium/services/map-events-mananger/map-events-manager';
+import { Observable } from 'rxjs/Observable';
+import { CoordinateConverter } from '../../../../angular-cesium/services/coordinate-converter/coordinate-converter.service';
+import { CameraService } from '../../../../angular-cesium/services/camera/camera.service';
+import { Cartesian3 } from '../../../../angular-cesium/models/cartesian3';
+import { CircleEditUpdate } from '../../../models/circle-edit-update';
+import { CirclesManagerService } from './circles-manager.service';
+import { CircleEditorObservable } from '../../../models/circle-editor-observable';
+import { CircleEditOptions } from '../../../models/circle-edit-options';
+export declare const DEFAULT_CIRCLE_OPTIONS: CircleEditOptions;
+export declare class CirclesEditorService {
+    private mapEventsManager;
+    private updateSubject;
+    private updatePublisher;
+    private counter;
+    private coordinateConverter;
+    private cameraService;
+    private circlesManager;
+    private observablesMap;
+    init(mapEventsManager: MapEventsManagerService, coordinateConverter: CoordinateConverter, cameraService: CameraService, circlesManager: CirclesManagerService): void;
+    onUpdate(): Observable<CircleEditUpdate>;
+    create(options?: CircleEditOptions, priority?: number): CircleEditorObservable;
+    edit(center: Cartesian3, radius: number, options?: CircleEditOptions, priority?: number): CircleEditorObservable;
+    private editCircle(id, priority, editSubject, options, editObservable?);
+    private createEditorObservable(observableToExtend, id);
+    private setOptions(options);
+    private getCenterPosition(id);
+    private getCenterPoint(id);
+    private getRadiusPosition(id);
+    private getRadius(id);
+    private getCircleProperties(id);
+    private generteId();
+}

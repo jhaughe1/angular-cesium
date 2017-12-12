@@ -1,0 +1,23 @@
+export var defaultLabelProps = {
+    backgroundColor: new Cesium.Color(0.165, 0.165, 0.165, 0.8),
+    backgroundPadding: new Cesium.Cartesian2(7, 5),
+    distanceDisplayCondition: undefined,
+    eyeOffset: Cesium.Cartesian3.ZERO,
+    fillColor: Cesium.Color.WHITE,
+    font: '30px sans-serif',
+    heightReference: Cesium.HeightReference.NONE,
+    horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+    outlineColor: Cesium.Color.BLACK,
+    outlineWidth: 1.0,
+    pixelOffset: Cesium.Cartesian2.ZERO,
+    pixelOffsetScaleByDistance: undefined,
+    scale: 1.0,
+    scaleByDistance: undefined,
+    show: true,
+    showBackground: false,
+    style: Cesium.LabelStyle.FILL,
+    text: '',
+    translucencyByDistance: undefined,
+    verticalOrigin: Cesium.VerticalOrigin.BASELINE,
+};
+//# sourceMappingURL=label-props.js.map

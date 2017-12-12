@@ -1,0 +1,1 @@
+{"version":3,"sources":["primitives.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAC","file":"primitives.js","sourceRoot":"","sourcesContent":["export * from './primitives/html';\r\n"]}
